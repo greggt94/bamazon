@@ -43,7 +43,6 @@ var buyItem = function() {
                 var updatedAmount = quantity - answer.amount;
                 if (answer.amount > quantity) {
                     console.log("Insufficient quantity!");
-                    connection.end();
                 } else {
                     console.log("Your total price is: " + (answer.amount * price));
                     connection.query("UPDATE products SET stock_quantity = ? WHERE item_id = ?", [updatedAmount, customerItem])
